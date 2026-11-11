@@ -1,0 +1,115 @@
+export const experimentsData = [
+  // PHYSICS EXPERIMENTS
+  {
+    id: 'reflection-of-light',
+    title: 'Reflection of Light',
+    subject: 'Physics',
+    difficulty: 'Beginner',
+    estimatedTime: '15-20 mins',
+    description: 'Explore the laws of reflection in a 3D interactive laboratory with laser optics and plane mirrors.',
+    icon: 'Sun',
+    color: 'physics',
+    featured: true,
+  },
+  {
+    id: 'ohms-law',
+    title: "Ohm's Law",
+    subject: 'Physics',
+    difficulty: 'Beginner',
+    estimatedTime: '15-20 mins',
+    description: 'Investigate the fundamental relationship between voltage, current and resistance in an electrical circuit.',
+    icon: 'Zap',
+    color: 'physics',
+    featured: true,
+  },
+  {
+    id: 'simple-pendulum',
+    title: 'Simple Pendulum',
+    subject: 'Physics',
+    difficulty: 'Intermediate',
+    estimatedTime: '15-20 mins',
+    description: 'Measure oscillations and discover how string length and gravity govern the pendulum time period.',
+    icon: 'Clock',
+    color: 'physics',
+    featured: true,
+  },
+  // CHEMISTRY EXPERIMENTS
+  {
+    id: 'acids-and-bases',
+    title: 'Acids and Bases',
+    subject: 'Chemistry',
+    difficulty: 'Beginner',
+    estimatedTime: '15 mins',
+    description: 'Test household and laboratory solutions using red litmus, blue litmus and universal pH indicator strips.',
+    icon: 'FlaskConical',
+    color: 'chemistry',
+    featured: true,
+  },
+  {
+    id: 'reaction-rate',
+    title: 'Reaction Rate',
+    subject: 'Chemistry',
+    difficulty: 'Advanced',
+    estimatedTime: '20-25 mins',
+    description: 'Control temperature and concentration to observe collision theory and chemical reaction kinetics.',
+    icon: 'Gauge',
+    color: 'chemistry',
+    featured: true,
+  },
+  {
+    id: 'separation-of-mixtures',
+    title: 'Separation of Mixtures',
+    subject: 'Chemistry',
+    difficulty: 'Intermediate',
+    estimatedTime: '15-20 mins',
+    description: 'Separate mixtures of sand, salt and water using filtration funnel setups and evaporation heating.',
+    icon: 'Filter',
+    color: 'chemistry',
+    featured: true,
+  },
+  {
+    id: 'physical-chemical-changes',
+    title: 'Physical & Chemical Changes',
+    subject: 'Chemistry',
+    difficulty: 'Beginner',
+    estimatedTime: '15 mins',
+    description: 'Classify real-world transformations including melting ice, dissolving sugar, rusting iron and burning paper.',
+    icon: 'Sparkles',
+    color: 'chemistry',
+    featured: true,
+  },
+];
+
+// Unlisted experiments (retained for backward URL compatibility without appearing in visible catalog)
+export const unlistedExperiments = [
+  {
+    id: 'refraction-of-light',
+    title: 'Refraction of Light',
+    subject: 'Physics',
+    difficulty: 'Intermediate',
+    estimatedTime: '20 mins',
+    description: 'Observe light ray bending across different optical media and verify Snell’s Law with critical angles.',
+    icon: 'Compass',
+    color: 'physics',
+    featured: false,
+  },
+];
+
+export const allExperimentsData = [...experimentsData, ...unlistedExperiments];
+
+export const progressData = {
+  experimentsCompleted: 5,
+  totalExperiments: 7,
+  learningHours: 14.5,
+  badges: 6,
+  totalBadges: 12,
+  weeklyProgress: [
+    { day: 'Mon', hours: 1.5 },
+    { day: 'Tue', hours: 2.0 },
+    { day: 'Wed', hours: 1.0 },
+    { day: 'Thu', hours: 2.5 },
+    { day: 'Fri', hours: 1.8 },
+    { day: 'Sat', hours: 3.2 },
+    { day: 'Sun', hours: 2.5 },
+  ],
+};

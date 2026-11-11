@@ -1,0 +1,356 @@
+// Comprehensive educational data for Reflection of Light 3D Experiment
+
+export const SCIENTIFIC_TERMS = {
+  'incident-ray': {
+    name: 'Incident Ray',
+    symbol: 'Beam (In)',
+    color: '#22d3ee',
+    definition: 'The incoming light ray that travels from the light source and strikes the surface of the mirror.',
+    simpleExplanation: 'Imagine throwing a ball toward a wall; the path the ball takes on its way to the wall is like the incident ray.',
+    formula: 'Measured relative to the Normal line at point O.',
+    practicalExample: 'The beam of sunlight traveling through your window and hitting a mirror on your wardrobe.',
+    realWorld: 'Flashlights, laser levels, optical fiber inputs.',
+  },
+  'reflected-ray': {
+    name: 'Reflected Ray',
+    symbol: 'Beam (Out)',
+    color: '#c084fc',
+    definition: 'The ray of light that bounces off the reflective surface at the point of incidence and travels back into the original medium.',
+    simpleExplanation: 'After the ball bounces off the wall, the path it takes moving away is like the reflected ray.',
+    formula: '∠r = ∠i (Angle of Reflection = Angle of Incidence)',
+    practicalExample: 'The beam bouncing off the mirror into your eyes, allowing you to see your reflection.',
+    realWorld: 'Rear-view mirrors in cars, solar power reflectors, satellite communication dishes.',
+  },
+  'point-of-incidence': {
+    name: 'Point of Incidence',
+    symbol: 'Point O',
+    color: '#facc15',
+    definition: 'The specific, precise geometric location on the mirror surface where the incident ray strikes.',
+    simpleExplanation: 'It is the exact collision spot where light hits the mirror surface before bouncing back.',
+    formula: 'Origin coordinates (0, 0, 0) on the mirror plane.',
+    practicalExample: 'The bright glowing pinpoint where a laser pointer meets the glass surface.',
+    realWorld: 'Focal targets in laser surgery, precision mirror alignment in telescopes.',
+  },
+  'normal-line': {
+    name: 'Normal Line',
+    symbol: 'Line N',
+    color: '#38bdf8',
+    definition: 'An imaginary reference line drawn perpendicular (at an exact 90° angle) to the mirror surface at the point of incidence.',
+    simpleExplanation: 'The normal is not a real ray of light; it is a mathematical guide stick pointing straight up from the mirror to help us measure angles accurately.',
+    formula: 'Angle between Normal and Mirror surface = 90°',
+    practicalExample: 'A flagpole standing straight up at a right angle from flat level ground.',
+    realWorld: 'Architectural alignments, physics ray tracing algorithms, 3D computer graphics lighting calculations.',
+  },
+  'angle-of-incidence': {
+    name: 'Angle of Incidence',
+    symbol: '∠i (or θi)',
+    color: '#22d3ee',
+    definition: 'The angle formed between the incident ray and the normal line at the point of incidence.',
+    simpleExplanation: 'Crucial rule: Always measure this angle from the normal (the vertical dashed line), NEVER from the mirror surface!',
+    formula: '∠i = |Angle(Incident Ray, Normal)| (Range: 0° to 90°)',
+    practicalExample: 'If a laser is tilted 30° away from the vertical normal line, the angle of incidence is 30°.',
+    realWorld: 'Stealth aircraft angles designed to deflect radar signals away from enemy receivers.',
+  },
+  'angle-of-reflection': {
+    name: 'Angle of Reflection',
+    symbol: '∠r (or θr)',
+    color: '#c084fc',
+    definition: 'The angle formed between the reflected ray and the normal line at the point of incidence.',
+    simpleExplanation: 'By nature’s strict law, this angle always mirrors the angle of incidence exactly: ∠r = ∠i.',
+    formula: '∠r = ∠i',
+    practicalExample: 'When ∠i is 45°, ∠r is automatically 45° on the opposite side of the normal.',
+    realWorld: 'Submarine periscopes using two 45° reflections to let sailors see above the water.',
+  },
+  'first-law': {
+    name: 'First Law of Reflection',
+    symbol: '∠i = ∠r',
+    color: '#34d399',
+    definition: 'The angle of incidence is strictly equal to the angle of reflection (∠i = ∠r).',
+    simpleExplanation: 'Light bounces off a flat mirror with the exact same slope that it entered. If it enters steeply, it bounces steeply; if shallow, it bounces shallow.',
+    formula: 'Angle of Incidence (∠i) = Angle of Reflection (∠r)',
+    practicalExample: 'Bouncing a tennis ball at a 45° angle off a smooth gym floor makes it rebound at 45°.',
+    realWorld: 'Billiards and pool bank shots, optical instruments, kaleidoscope designs.',
+  },
+  'second-law': {
+    name: 'Second Law of Reflection',
+    symbol: 'Coplanar Vectors',
+    color: '#818cf8',
+    definition: 'The incident ray, the reflected ray, and the normal to the surface at the point of incidence all lie in the same geometric plane (they are coplanar).',
+    simpleExplanation: 'If you draw the incoming beam and the normal line on a single flat sheet of paper, the reflected beam will stay right on that same sheet—it never twists or curves into a third direction!',
+    formula: 'Incident Vector × Normal Vector · Reflected Vector = 0 (Coplanar)',
+    practicalExample: 'Rotate the 3D experiment to view it from the side: you will notice the rays and normal form a single flat plane.',
+    realWorld: 'Optical fiber transmission, computer graphics rendering, fiber-optic telecommunication cables.',
+  },
+  'plane-mirror': {
+    name: 'Plane Mirror',
+    symbol: 'Flat Reflector',
+    color: '#94a3b8',
+    definition: 'A completely flat, smooth reflective surface typically made of glass with a thin silver or aluminum coating on the back.',
+    simpleExplanation: 'A household mirror that produces a virtual image of the exact same size as the original object.',
+    formula: 'Object distance = Image distance; Lateral magnification = +1',
+    practicalExample: 'The bathroom mirror you use every morning to brush your teeth.',
+    realWorld: 'Dressing mirrors, solar cookers, laser interferometers, microscope illuminators.',
+  },
+  'specular-reflection': {
+    name: 'Specular vs Diffuse Reflection',
+    symbol: 'Smooth vs Rough',
+    color: '#f43f5e',
+    definition: 'Specular reflection occurs on smooth surfaces where parallel rays reflect parallel. Diffuse reflection occurs on rough surfaces scattering light in all directions.',
+    simpleExplanation: 'A mirror gives a clear image because it has specular reflection. A white wall scatters light diffusely so you see the wall, not your reflection.',
+    formula: 'Specular: Parallel in → Parallel out. Diffuse: Parallel in → Scattered out.',
+    practicalExample: 'A calm lake reflects trees like a mirror (specular); wind-driven waves scatter the reflection into a blur (diffuse).',
+    realWorld: 'Cinema screens (diffuse reflection so everyone can see the movie from any seat), anti-glare screens.',
+  },
+};
+
+export const REAL_WORLD_APPLICATIONS = [
+  {
+    title: '1. Bathroom & Dressing Mirrors',
+    icon: 'Sparkles',
+    desc: 'Plane mirrors use specular reflection to produce an upright, virtual image of identical size to the object, with left-to-right lateral inversion.',
+  },
+  {
+    title: '2. Submarine Periscopes',
+    icon: 'Compass',
+    desc: 'Periscopes use two plane mirrors arranged parallel to each other at 45° angles. Light enters the top mirror, reflects 90° down the tube, and reflects 90° into the observer’s eyes.',
+  },
+  {
+    title: '3. Vehicle Rear-View Mirrors',
+    icon: 'Target',
+    desc: 'Interior rear-view mirrors allow drivers to observe vehicles behind them using reflection angles calibrated to the driver’s eye level.',
+  },
+  {
+    title: '4. Fiber Optic Cables',
+    icon: 'Zap',
+    desc: 'High-speed internet data travels through glass fibers across oceans using successive total internal reflections along the inner core.',
+  },
+  {
+    title: '5. Bicycle & Highway Retroreflectors',
+    icon: 'Shield',
+    desc: 'Corner cube retroreflectors use three mutually perpendicular mirrors to bounce car headlight beams directly back to the driver’s eyes, illuminating signs at night.',
+  },
+];
+
+export const REFLECTION_STEPS = [
+  {
+    id: 1,
+    title: 'Mission Briefing',
+    subtitle: 'The Mystery of the Mirror',
+    shortDesc: 'Inspect the 3D lab setup and mission objectives',
+    objectives: [
+      'Navigate the 3D workspace (Orbit, Zoom, Pan)',
+      'Inspect the plane mirror, normal line, and laser apparatus',
+      'Prepare to calibrate light reflection to hit the 55° sensor target',
+    ],
+  },
+  {
+    id: 2,
+    title: 'Pre-Concept Check',
+    subtitle: 'Initial Hypothesis',
+    shortDesc: 'What happens when light strikes a mirror?',
+    question: 'What happens when a ray of light strikes a plane mirror?',
+    options: [
+      {
+        id: 'A',
+        text: 'It passes straight through without bending or slowing down.',
+        isCorrect: false,
+        feedback: 'Incorrect. A plane mirror is opaque with a silvered reflective backing, so light cannot pass through.',
+      },
+      {
+        id: 'B',
+        text: 'It bounces back into the same medium at an angle equal to the angle of incidence.',
+        isCorrect: true,
+        feedback: 'Correct! Light undergoes specular reflection: it rebounds into the original medium adhering strictly to ∠i = ∠r.',
+      },
+      {
+        id: 'C',
+        text: 'It is completely absorbed and converted into sound energy.',
+        isCorrect: false,
+        feedback: 'Incorrect. Plane mirrors reflect over 95% of incoming visible light.',
+      },
+    ],
+  },
+  {
+    id: 3,
+    title: 'Explore 3D Apparatus',
+    subtitle: 'Identify Components in 3D',
+    shortDesc: 'Rotate the camera to examine the apparatus',
+    guide: [
+      'Rotate the camera using Left Click + Drag to view the 3D mirror and laser.',
+      'The vertical dashed line is the Normal (N), perpendicular (90°) to the mirror surface.',
+      'The glowing Cyan beam is the Incident Ray traveling from the laser to point O.',
+      'The glowing Violet beam is the Reflected Ray bouncing off point O.',
+    ],
+  },
+  {
+    id: 4,
+    title: 'Prediction Question 1',
+    subtitle: 'Angle Adjustment & Prediction',
+    shortDesc: 'Predict the reflected angle behavior as angle increases',
+    question: 'What happens to the reflected angle when the incident angle increases?',
+    options: [
+      {
+        id: 'A',
+        text: 'It increases by the exact same amount (∠r increases as ∠i increases).',
+        isCorrect: true,
+        feedback: 'Spot on! Because ∠r = ∠i, any increase in the incident angle produces an identical increase in the reflected angle.',
+      },
+      {
+        id: 'B',
+        text: 'It decreases so that the sum of both angles always equals 90°.',
+        isCorrect: false,
+        feedback: 'Incorrect. The two angles do not sum to 90°; each is independently equal to the other (∠i = ∠r).',
+      },
+      {
+        id: 'C',
+        text: 'It stays locked at 45° regardless of the laser angle.',
+        isCorrect: false,
+        feedback: 'Incorrect. The reflected ray is not fixed; it moves dynamically in lockstep with the incident ray.',
+      },
+    ],
+    hint: 'Think about the First Law of Reflection: Angle of incidence always equals Angle of reflection.',
+  },
+  {
+    id: 5,
+    title: 'Target Challenge (55°)',
+    subtitle: 'Align the 3D Laser Beam',
+    shortDesc: 'Calibrate the laser to strike the 55° sensor target',
+    targetAngle: 55,
+    guide: [
+      'A research sensor target is placed at 55° on the reflection side.',
+      'Your task: Adjust the Angle of Incidence slider until the reflected beam strikes the target detector!',
+      'Watch for the sensor to activate with a glowing emerald signal.',
+    ],
+  },
+  {
+    id: 6,
+    title: 'Prediction Question 2',
+    subtitle: 'Normal Incidence (0°)',
+    shortDesc: 'What happens when light strikes at 0° to the normal?',
+    question: 'What happens when the incident ray strikes the mirror at 0° to the normal (straight down)?',
+    options: [
+      {
+        id: 'A',
+        text: 'It reflects straight back along the normal line (∠r = 0°).',
+        isCorrect: true,
+        feedback: 'Brilliant! When ∠i = 0°, the reflected ray must also have ∠r = 0°, meaning it retraces its path straight back along the normal.',
+      },
+      {
+        id: 'B',
+        text: 'It bends at 90° and skims across the glass surface.',
+        isCorrect: false,
+        feedback: 'Incorrect. At 0° incidence, the ray does not bend sideways; it reflects straight back.',
+      },
+      {
+        id: 'C',
+        text: 'It disappears completely into the mirror.',
+        isCorrect: false,
+        feedback: 'Incorrect. The mirror reflects the light directly back to the source.',
+      },
+    ],
+    hint: 'Imagine dropping a tennis ball straight down onto a flat floor: in what direction does it bounce?',
+  },
+  {
+    id: 7,
+    title: 'Prediction Question 3 & 2nd Law',
+    subtitle: 'The Coplanar Ray Test',
+    shortDesc: 'Test whether the rays lie in the same 3D geometric plane',
+    question: 'Are the incident ray, reflected ray and normal line always in the same geometric plane?',
+    options: [
+      {
+        id: 'A',
+        text: 'Yes! All three always lie in the same geometric plane (Coplanar).',
+        isCorrect: true,
+        feedback: 'Perfect! This is the Second Law of Reflection. In 3D space, reflection is strictly two-dimensional within the plane of incidence.',
+      },
+      {
+        id: 'B',
+        text: 'No, the reflected ray curves into a 3rd dimension.',
+        isCorrect: false,
+        feedback: 'Incorrect. Rotate the 3D camera to view the experiment from the side: you will see all vectors lie in a single flat plane.',
+      },
+      {
+        id: 'C',
+        text: 'Only when the angle of incidence is exactly 45°.',
+        isCorrect: false,
+        feedback: 'Incorrect. The coplanar rule holds true for every single angle of incidence.',
+      },
+    ],
+    hint: 'Toggle the "Coplanar Plane" button in the simulation controls or rotate your 3D camera to side view.',
+  },
+  {
+    id: 8,
+    title: 'Mastery Quiz',
+    subtitle: 'Consolidate Understanding',
+    shortDesc: 'Verify your mastery with a 3-question quiz',
+    quizQuestions: [
+      {
+        id: 'q1',
+        prompt: 'If a light ray strikes a plane mirror with an angle of incidence of 30°, what is the total angle between the incident ray and the reflected ray?',
+        options: [
+          { id: 'a', text: '30°' },
+          { id: 'b', text: '60°', isCorrect: true },
+          { id: 'c', text: '90°' },
+          { id: 'd', text: '120°' },
+        ],
+        explanation: 'Since ∠i = 30° and ∠r = 30°, the total angle between the incident and reflected rays is ∠i + ∠r = 30° + 30° = 60°.',
+      },
+      {
+        id: 'q2',
+        prompt: "What is the 'Normal' line in an optical reflection diagram?",
+        options: [
+          { id: 'a', text: 'A line parallel to the mirror surface' },
+          { id: 'b', text: 'An imaginary line perpendicular (90°) to the mirror surface at the point of incidence', isCorrect: true },
+          { id: 'c', text: 'The physical beam of light traveling from the laser' },
+          { id: 'd', text: 'The boundary frame of the mirror stand' },
+        ],
+        explanation: 'The Normal is an imaginary reference line drawn perpendicular (at 90°) to the surface at the point of incidence.',
+      },
+      {
+        id: 'q3',
+        prompt: 'Which everyday device relies on two plane mirrors set at 45° to allow viewing over obstacles?',
+        options: [
+          { id: 'a', text: 'Periscope', isCorrect: true },
+          { id: 'b', text: 'Microscope' },
+          { id: 'c', text: 'Astronomical Refractor' },
+          { id: 'd', text: 'Magnifying Glass' },
+        ],
+        explanation: 'A periscope uses two 45° plane mirrors so light reflects twice at 90° angles, directing the beam around obstacles.',
+      },
+    ],
+  },
+];
+
+export const PROGRESSIVE_HINTS = {
+  1: [
+    'Use Left Click + Drag to rotate the 3D scene around the optical bench.',
+    'Use Mouse Scroll to zoom in and out. Right Click + Drag allows you to pan.',
+  ],
+  2: [
+    'Think about looking into a bathroom mirror: light bounces back to your eyes, producing a clear reflection.',
+  ],
+  3: [
+    'The normal line is perpendicular (at 90°) to the mirror surface.',
+    'Angles in optics are always measured from the Normal line, never from the mirror surface!',
+  ],
+  4: [
+    'Remember the First Law of Reflection: Angle of incidence = Angle of reflection (∠i = ∠r).',
+    'If ∠i gets larger, what must happen to ∠r to keep them equal?',
+  ],
+  5: [
+    'The target sensor is stationed at 55° on the reflection side.',
+    'Because ∠i = ∠r, set the angle slider to exactly 55° to hit the target bullseye!',
+  ],
+  6: [
+    'When a light ray strikes along the normal, the angle between the ray and the normal is 0°.',
+    'By the First Law, ∠r = ∠i = 0°, so it bounces straight back along the same path.',
+  ],
+  7: [
+    'Rotate the 3D camera so you are looking directly edge-on down the mirror.',
+    'Notice that the incident beam, the normal, and the reflected beam all line up in a single flat vertical sheet (coplanar).',
+  ],
+  8: [
+    'Take your time. For question 1, add ∠i and ∠r together.',
+    'For question 3, recall our discussion of submarine optical devices.',
+  ],
+};
